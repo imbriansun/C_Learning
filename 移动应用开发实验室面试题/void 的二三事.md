@@ -1,4 +1,4 @@
-# void* 的二三事
+# void指针二三事
 
 翻译自：[void pointer in C / C++](https://www.geeksforgeeks.org/void-pointer-c-cpp/)
 
@@ -79,7 +79,7 @@ int main()
 
 
 
-2）C标准不允许指针与空指针间进行算数运算。然而，在GNU C中，这被允许但是空指针的大小被规定为1。 在gcc编译器下运行如下代码：
+2）C标准**不允许**指针与空指针间进行算数运算。然而，在GNU C中，这被允许但是空指针的大小被规定为1。 在gcc编译器下运行如下代码：
 
 ```c
 #include<stdio.h> 
@@ -101,6 +101,15 @@ int main()
 
 
 
-### 具体相关的空指针运算：
+### 具体相关的空指针运算的说明：
 
 https://stackoverflow.com/questions/20967868/should-the-compiler-warn-on-pointer-arithmetic-with-a-void-pointer
+
+
+You are **not supposed** to do pointer arithmetic on void pointers.
+
+From the C Standard
+
+> 6.5.6-2: For addition, either both operands shall have arithmetic type, or one operand shall be a pointer to an object type and the other shall have integer type.
+>
+> 6.2.5-19: The void type comprises an empty set of values; it is an incomplete type that cannot be completed.
