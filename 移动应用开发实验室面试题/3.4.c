@@ -1,4 +1,5 @@
 #include <stdio.h>
+#pragma pack (8)
 struct B{
 	int a;
 	char b;
@@ -18,7 +19,7 @@ struct C{
 
 int main()
 {
-	printf("%d,%d\n",sizeof(struct A),sizeof(struct B));
-	printf("%d",sizeof(struct C));
+	printf("%lu,%lu\n",sizeof(struct A),sizeof(struct B));
+	printf("%lu",sizeof(struct C));
 }
 
