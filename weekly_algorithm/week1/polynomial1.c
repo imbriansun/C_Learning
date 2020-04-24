@@ -93,7 +93,7 @@ struct node* multi(struct node* head1, struct node* head2) {
 
 void bubblesort_linklist(struct node* head){
 	struct node* ptr = head->next;
-
+	
 
 }
 
